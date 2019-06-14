@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems main.cpp)
+add_executable(Leetcode-Problems "LT-126 Word Ladder II.cpp")
