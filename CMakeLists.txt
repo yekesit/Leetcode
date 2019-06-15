@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-160 Intersection of Two Linked Lists.cpp")
+add_executable(Leetcode-Problems "LT-41 First Missing Positive.cpp")
