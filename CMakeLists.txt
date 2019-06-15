@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-41 First Missing Positive.cpp")
+add_executable(Leetcode-Problems "LT-73 Set Matrix Zeroes.cpp")
