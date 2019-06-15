@@ -37,7 +37,7 @@ public:
         if(i < 0 || j < 0 || i == rows || j == cols) return;
         if(grid[i][j] == 0) return;
         grid[i][j] = 0;
-        path.emplace_back({i - oi, j - oj});
+        path.emplace_back(make_pair(i - oi, j - oj));
         fillPath(grid, i - 1, j, oi, oj, path);
         fillPath(grid, i + 1, j, oi, oj, path);
         fillPath(grid, i, j - 1, oi, oj, path);
