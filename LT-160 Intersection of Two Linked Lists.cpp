@@ -6,6 +6,16 @@
 
 using namespace std;
 
+/*
+ *  1.basic according to length
+    2.X + Z + Y = Y + Z + X. Where
+    X is belong to list 1
+    Y is belong to list 2
+    Z is common list
+    So go around two times, then if there is an intersection. We will meet
+ */
+
+
 /**
  * Definition for singly-linked list.
  * struct ListNode {
