@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "Room_Schedule.cpp")
+add_executable(Leetcode-Problems "LT-535 Encode and Decode TinyURL.cpp")
