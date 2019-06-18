@@ -88,7 +88,7 @@ public:
 
 int main() {
     vector<int> test{1,3,5,2,4,6};
-    sort(test.begin(), test.end(), [](int a, int b){return a > b;});
+    sort(test.rbegin(), test.rend());
     for(auto t : test)
         cout << t << ' ';
 
