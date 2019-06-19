@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-340 Longest Substring with At Most K Distinct Characters.cpp")
+add_executable(Leetcode-Problems "LT-3 Longest Substring Without Repeating Characters.cpp")
