@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-974 Subarray Sums Divisible by K.cpp")
+add_executable(Leetcode-Problems "LT-78 Subsets.cpp")
