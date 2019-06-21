@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-22 Generate Parentheses.cpp")
+add_executable(Leetcode-Problems "LT-560 Subarray Sum Equals K.cpp")
