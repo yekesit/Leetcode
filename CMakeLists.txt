@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-200 Number of Islands.cpp")
+add_executable(Leetcode-Problems "LT-33 Search in Rotated Sorted Array.cpp")
