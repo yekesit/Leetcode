@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-224 Basic Calculator.cpp")
+add_executable(Leetcode-Problems "LT-332 Reconstruct Itinerary.cpp")
