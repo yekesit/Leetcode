@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-621 Task Scheduler.cpp")
+add_executable(Leetcode-Problems "LT-25 Reverse Nodes in k-Group.cpp")
