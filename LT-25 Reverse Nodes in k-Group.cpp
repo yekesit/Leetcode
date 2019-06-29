@@ -20,43 +20,109 @@ struct ListNode{
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
-class Solution {
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+
+//Basic solution, use reverse list as recursion helper function,
+//And then do it one by one.
+//Basic function is
+//After every recursion, we get.
+// -1  ->  1  ->  2  ->  3  ->  4  ->  5
+//List changes to
+// -1  ->  1  <-  2  <-  3  ->  4  ->  5
+//save -> prev ->   cur_head -> next
+//prev is the return value.
+//Then we write code as
+//save->next = cur_head;
+//prev->next = next;
+//save = prev;
+//Then it changes to
+// -1  ->  3  ->  2  ->  1  ->   4  ->  5
+//    cur_head  ->  save/prev -> next
+//Then again, we pass save->next to make another loop.
+// class Solution {
+// public:
+//     ListNode* reverseKGroup(ListNode* head, int k) {
+//         count = k - 1;
+//         int len = 0;
+//         ListNode *p = head;
+//         while(p){
+//             len++;
+//             p = p->next;
+//         }
+//         int loops = len / k;
+//         ListNode *dummy = new ListNode(-1);
+//         dummy->next = head;
+//         ListNode *save = dummy;
+//         while(loops--){
+//             prev = reverse(save->next, 0);
+//             save->next = cur_head;
+//             prev->next = next;
+//             save = prev;
+//         }
+//         return dummy->next;
+//     }
+
+// private:
+//     int count;
+//     ListNode *next;
+//     ListNode *prev;
+//     ListNode *cur_head;
+
+//     ListNode* reverse(ListNode* node, int cur_count){
+//         if(cur_count == count){
+//             cur_head = node;
+//             next = node->next;
+//             return node;
+//         }
+//         ListNode *rev = reverse(node->next, cur_count + 1);
+//         rev->next = node;
+//         return node;
+//     }
+// };
+
+//Try to use iterative, got failure yeasterday.
+//Same thought with recursion
+//Since we have a dummy head,
+//We just keep putting node next to dummy head
+//Then we get a part k reverse list. So nice
+//Emm code is concise now. LOL. same time complexity.
+class Solution{
 public:
     ListNode* reverseKGroup(ListNode* head, int k) {
-        if(!head) return nullptr;
-        ListNode* p = head;
+        if(!head || k == 1) return head;
         int len = 0;
-        while(p){
+        ListNode *pre_tail  = head;
+        while(pre_tail){
             len++;
-            p = p->next;
+            pre_tail = pre_tail->next;
         }
-        int total = len / k;
-        int loops = 0;
-        k--;
-        p = head;
-        ListNode *p1, *p2, *p3;
-        while(loops < total){
-            int time = k;
-            p1 = p;
-            p2 = p1->next;
-            p3 = p2 == nullptr? nullptr : p2->next;
-            while(time){
-                p2->next = p1;
-                p1 = p2;
-                p2 = p3;
-                p3 = p2 == nullptr ? nullptr : p2->next;
-                time--;
+        int loops = len / k;
+        ListNode *dummy = new ListNode(-1);
+        dummy->next = head;
+        pre_tail = dummy;
+        ListNode *cur_tail, *next_head;
+        while(loops--){
+            cur_tail = pre_tail->next;
+            next_head = cur_tail->next;
+            for(int i = 1; i < k; i++){
+                cur_tail->next = next_head->next;
+                next_head->next = pre_tail->next;
+                pre_tail->next = next_head;
+                next_head = cur_tail->next;
             }
-            if(!loops){
-                head = p1;
-            }
-            p->next = p2;
-            p = p2;
-            loops++;
+            pre_tail = cur_tail;
         }
-        return head;
+        return dummy->next;
     }
 };
+
 
 int main() {
     ListNode *head = new ListNode(1);
