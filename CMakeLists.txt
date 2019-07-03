@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-443 String Compression .cpp")
+add_executable(Leetcode-Problems "LT-67 Add Binary.cpp")
