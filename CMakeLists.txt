@@ -3,4 +3,4 @@ project(Leetcode-Problems)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Leetcode-Problems "LT-780 Reaching Points.cpp")
+add_executable(Leetcode-Problems "find_k_char_in_string_pattern.cpp")
