@@ -16,7 +16,6 @@ char findK(string& str, int k){
     int left = 0;
     int right = 0;
     int len = str.length();
-
     while(left < len && right < len){
         while(right < len && isalpha(str[right])) right++;
         string cur = str.substr(left, right - left);
@@ -41,6 +40,6 @@ char findK(string& str, int k){
 
 int main(){
     string str = "spring5frog10";
-    int k = 29;
+    int k = 69;
     cout << findK(str, k) << endl;
 }
