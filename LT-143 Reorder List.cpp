@@ -94,7 +94,26 @@ public:
     }
 };
 
-
+//Well, if it doesn't care about memory
+//Code becomes nice. LOL
+class Solution{
+public:
+    void reorderList(ListNode* head) {
+        if(!head || !head->next) return;
+        vector<ListNode*> nodes;
+        while(head){
+            nodes.push_back(head);
+            head = head->next;
+        }
+        int i = 0;
+        int j = nodes.size() - 1;
+        while(i < j){
+            nodes[i++]->next = nodes[j];
+            nodes[j--]->next = nodes[i];
+        }
+        nodes[i]->next = nullptr;
+    }
+};
 
 int main(){
 
